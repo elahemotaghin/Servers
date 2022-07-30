@@ -1,0 +1,133 @@
+@font-face {
+    font-family: IRANYekan;
+    font-style: normal;
+    font-weight: bold;
+    src: url('../font/YekanBakh-Bold.eot');
+    src: url('../font/YekanBakh-Bold.eot?#iefix') format('embedded-opentype'),
+      /* FF39+,Chrome36+, Opera24+*/ url('../font/YekanBakh-Bold.woff') format('woff'),
+      /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../font/YekanBakh-Bold.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: IRANYekan;
+    font-style: normal;
+    font-weight: 300;
+    src: url('../font/YekanBakh-Thin.eot');
+    src: url('../font/YekanBakh-Thin.eot?#iefix') format('embedded-opentype'),
+      /* FF39+,Chrome36+, Opera24+*/ url('../font/YekanBakh-Thin.woff') format('woff'),
+      /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../font/YekanBakh-Thin.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: IRANYekan;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/YekanBakh-Regular.eot');
+    src: url('../font/YekanBakh-Regular.eot?#iefix') format('embedded-opentype'),
+      /* FF39+,Chrome36+, Opera24+*/ url('../font/YekanBakh-Regular.woff') format('woff'),
+      /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../font/YekanBakh-Regular.ttf') format('truetype');
+  }
+  
+  /* Latin fonts (Roboto) */
+  @font-face {
+    font-family: IRANYekanEn;
+    font-style: normal;
+    font-weight: bold;
+    src: url('../font/en/YekanBakh-Bold.eot');
+    src: url('../font/en/YekanBakh-Bold.eot?#iefix') format('embedded-opentype'),
+      /* IE6-8 */ url('../font/en/YekanBakh-Bold.woff2') format('woff2'),
+      /* FF39+,Chrome36+, Opera24+*/ url('../font/en/YekanBakh-Bold.woff') format('woff'),
+      /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../font/en/YekanBakh-Bold.ttf') format('truetype');
+  }
+  
+@font-face {
+font-family: IRANYekanEn;
+font-style: normal;
+font-weight: 300;
+src: url('../font/en/YekanBakh-Thin.eot');
+src: url('../font/en/YekanBakh-Thin.eot?#iefix') format('embedded-opentype'),
+    /* IE6-8 */ url('../font/en/YekanBakh-Thin.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('../font/en/YekanBakh-Thin.woff') format('woff'),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../font/en/YekanBakh-Thin.ttf') format('truetype');
+}
+
+@font-face {
+font-family: IRANYekanEn;
+font-style: normal;
+font-weight: normal;
+src: url('../font/en/YekanBakh-Regular.eot');
+src: url('../font/en/YekanBakh-Regular.eot?#iefix') format('embedded-opentype'),
+    /* IE6-8 */ url('../font/en/YekanBakh-Regular.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('../font/en/YekanBakh-Regular.woff') format('woff'),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../font/en/YekanBakh-Regular.ttf') format('truetype');
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f0f8f9;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5092a6;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2F6D80;
+}
+
+.statusIcon{
+    width:10px;
+    height: 10px;
+    border: 3px solid;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#addBtn{
+    color: #fff;
+    border-radius: 20px;
+    padding: 4px 16px;
+}
+
+#filterBtn{
+    border-radius: 20px;
+    padding: 3px 16px;
+}
+
+.usageCard{
+  box-shadow: 0px 0px 0px #2B4560;
+  color: #2F6D80;
+  -webkit-transition:  all .3s ease-out;
+     box-shadow: .8px .9px 3px #2B4560;
+}
+
+.usageCard:hover{
+  box-shadow: 1px 8px 20px #2B4560;
+  -webkit-transition:  all .3s ease-in;
+    color: #fff;
+    background-color: #2F6D80;
+}
+
+.usageCardHeader{
+  color: #2F6D80;
+}
+
+.usageCard:hover .usageCardHeader{
+  -webkit-transition:  all .3s ease-in;
+    color: #fff;
+}
+
+.usageCardChart{
+  color: #2F6D80;
+}
+
+.usageCard:hover .usageCardChart{
+  -webkit-transition:  all .3s ease-in;
+    color: #fff;
+}
