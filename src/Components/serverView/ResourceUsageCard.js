@@ -1,44 +1,60 @@
 import React from "react";
+import { PieChart } from 'react-minimal-pie-chart';
 
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
-import CircularProgress from '@mui/material/CircularProgress';
+import LinearProgress from '@mui/material/LinearProgress';
 
 const ResourcesageCard = (props) => {
     const {content} = props;
+    const [loading, setLoading] = React.useState(false);
+    const [success, setSuccess] = React.useState(false);
+    const timer = React.useRef(0);
+    React.useEffect(() => {
+        return () => {
+        clearTimeout(timer.current);
+        };
+    }, []);
+
+    const cardOnClick = () =>{
+        if (!loading) {
+            setSuccess(false);
+            setLoading(true);
+            timer.current = window.setTimeout(() => {
+              setSuccess(true);
+              setLoading(false);
+            }, 2000);
+        }
+    }
+
     return(
-        <Grid md={5} margin={1}>
-        <Card className='usageCard'>
+        <Grid item md={5} margin={1}>
+        <Card className='usageCard' onClick={cardOnClick} sx={{opacity: loading? 0.5 : 1}}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between'}}>
                 {content?.icon}
                 <CardHeader title={content.title} className='usageCardHeader'/>
             </Box>
             <CardContent sx={{display: 'flex', justifyContent: 'center'}}>
-                <Box sx={{position: 'relative', margin: 2}}>
-                    {/* <ResourceUsageChart/> */}
-                    <CircularProgress variant="determinate" value={content.usage} size='140px' thickness={4} className='usageCardChart'/>
-                    <Box
-                        sx={{
-                        top: 0,
-                        left: 0,
-                        bottom: 0,
-                        right: 0,
-                        position: 'absolute',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        }}
-                    >
-                        <Typography variant="caption" component="div">
-                        {`${Math.round(content.usage)}%`}
-                        </Typography>
-                    </Box>
+                <Box sx={{margin: 2}}>
+                <PieChart
+                    data={[
+                        { title: 'One', value: content.usage, color: '#F8AFA6' },
+                    ]}
+                    lineWidth={40}
+                    totalValue= {100}
+                    labelPosition='50%'
+                    label={()=>content.usage+'%'}
+                    background='#c9c9c9'
+                    labelStyle={{color:'#fff'}}
+                />
                 </Box>
             </CardContent>
+            {loading && (
+                <LinearProgress color="secondary" />
+                )}
         </Card>
         </Grid>
     );

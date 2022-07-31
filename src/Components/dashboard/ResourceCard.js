@@ -19,7 +19,7 @@ const ResourceCard = (props) =>{
                 <IconButton sx={{color: content?.color ? '#fff' : ''}}><MoreVertIcon/></IconButton>
             </Box>
             <CardHeader title={content.title} />
-            <CardContent>
+            <CardContent sx={{paddingBottom:'0px !important'}}>
                 <Typography padding={1}>{content.count} {content.countUnit}</Typography>
                 <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start'}}>
                     <LockIcon fontSize="small" color="gray" sx={{margin: "0px 4px", color: content?.color ? '#fff' : ''}}/>
