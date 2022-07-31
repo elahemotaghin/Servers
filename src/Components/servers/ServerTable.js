@@ -40,6 +40,19 @@ export const serverStatusToPersion = (status) =>{
         return 'غیر فعال';
     return 'نامشخص'
 }
+export const serverStatusColor = (status) =>{
+    if(status === 'active')
+        return 'success.main';
+    else if(status === 'starting')
+        return 'primary.light';
+    else if(status === 'stop')
+        return 'warning.main';
+    else if(status === 'running')
+        return 'primary.main';
+    else if(status === 'disable')
+        return 'error.main';
+    return 'gray.main'
+}
 
 const ServerTable = (props) => {
     let navigate = useNavigate();
@@ -202,21 +215,6 @@ const ServerTable = (props) => {
         </React.Fragment>
     );
 
-    const serverStatusColor = (server) =>{
-        const status = server?.status;
-        if(status === 'active')
-            return 'success.main';
-        else if(status === 'starting')
-            return 'primary.light';
-        else if(status === 'stop')
-            return 'warning.main';
-        else if(status === 'running')
-            return 'primary.main';
-        else if(status === 'disable')
-            return 'error.main';
-        return 'gray.main'
-    }
-
     return(
         <>
         {sortChips.map((chip, index)=>{
@@ -314,7 +312,7 @@ const ServerTable = (props) => {
                                         {server.dataCenter}
                                     </TableCell>
                                     <TableCell align='center' 
-                                        sx={{ color: serverStatusColor(server)}}
+                                        sx={{ color: serverStatusColor(server.status)}}
                                         onClick={event => routeToServer(server.id, server.status)}>
                                         <Box sx={{display:'flex', alignItems:'center'}}>
                                             <Box className="statusIcon" component={'span'}></Box>
