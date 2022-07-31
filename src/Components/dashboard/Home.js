@@ -75,7 +75,8 @@ const Home = () =>{
                                 <ResourceCard key={index} content={item}/>
                             ))}
                     </Box>
-                    <Box sx={{width: '70%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 3}}>
+                    <Box sx={{width: '70%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 3,
+                     backgroundColor:'#fff', borderRadius: '16px', margin:2}}>
                         <Chart/>
                     </Box>
                 </Box>
