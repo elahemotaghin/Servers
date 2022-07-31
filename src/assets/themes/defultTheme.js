@@ -95,7 +95,7 @@ const defaultTheme = createTheme({
             styleOverrides:{
                 root:{
                     paddingTop: '0px',
-                    paddingBottom: '0px !important'
+                    // paddingBottom: '0px !important'
                 }
             }
         },
@@ -191,7 +191,6 @@ const defaultTheme = createTheme({
         MuiTableCell:{
             styleOverrides:{
                 root:{
-                    // borderBottom: 'none',
                     padding: '4px 8px',
                     '&:first-child': {
                         fontWeight: '700',

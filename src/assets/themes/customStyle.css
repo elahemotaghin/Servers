@@ -122,12 +122,3 @@ src: url('../font/en/YekanBakh-Regular.eot?#iefix') format('embedded-opentype'),
   -webkit-transition:  all .3s ease-in;
     color: #fff;
 }
-
-.usageCardChart{
-  color: #2F6D80;
-}
-
-.usageCard:hover .usageCardChart{
-  -webkit-transition:  all .3s ease-in;
-    color: #fff;
-}
