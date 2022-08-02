@@ -3,6 +3,7 @@ import Overview from "./overview";
 import {useLocation, useParams} from "react-router-dom";
 import {serverStatusToPersion, serverStatusColor} from '../servers/ServerTable'
 import ResourceView from './ResourceView';
+import AccessibilityView from './AccessibilityView'
 
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
@@ -54,7 +55,9 @@ const ServerView = (props) => {
                 <TabPanel value="2" sx={{height: '100%', backgroundColor: 'defaultBack.light'}}>
                     <ResourceView/>
                 </TabPanel>
-                <TabPanel value="3">Item Three</TabPanel>
+                <TabPanel value="3" sx={{height: '100%', backgroundColor: 'defaultBack.light'}}>
+                    <AccessibilityView/>
+                </TabPanel>
             </TabContext>
         </Box>
     );
