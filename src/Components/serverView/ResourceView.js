@@ -48,25 +48,22 @@ const versionMarks = [
 const sliderTheme = createTheme({
     direction: 'ltr',
     palette: {
-        primary:{
-            light: '#77e4e1',
-            main: '#2F6D80',
-            dark: '#2B4560',
-        },
         secondary:{
             light: '#F8AFA6',
             main: '#F79489',
             dark: '#E98973',
             contrastText: '#F79489',
         },
-        gray:{
-            main: '#B1B1B1',
-            dark: '#8d8c8c'
-        },
-        defaultBack:{
-            light: '#e0e7e7'
-        }
     },
+    components:{
+        MuiSlider:{
+            styleOverrides:{
+                thumb:{
+                    boxShadow: '.8px 3px 8px #F8AFA6'
+                }
+            }
+        }
+    }
 })
 
 const CustomSlider = (props)=>{
