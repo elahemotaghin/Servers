@@ -27,6 +27,21 @@ const defaultTheme = createTheme({
         h1:{
             fontSize: '28px',
         },
+        h2:{
+            fontSize: '26px',
+        },
+        h3:{
+            fontSize: '24px',
+        },
+        h4:{
+            fontSize: '22px',
+        },
+        h5:{
+            fontSize: '20px',
+        },
+        h6:{
+            fontSize: '18px',
+        },
         body1:{
             fontSize: '14px',
             fontWeight: '400 !important'
@@ -141,14 +156,12 @@ const defaultTheme = createTheme({
         MuiList:{
             styleOverrides:{
                 root:{
-                    paddingTop: '0px'
                 }
             }
         },
         MuiListItem:{
             styleOverrides:{
                 root:{
-                    paddingTop: '0px',
                     paddingBottom: '0px',
                     paddingLeft: '0px'
                 }

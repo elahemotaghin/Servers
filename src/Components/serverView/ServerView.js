@@ -1,16 +1,15 @@
 import React from "react";
 import Overview from "./overview";
-import {useLocation, useParams, Link} from "react-router-dom";
+import {useLocation, useParams} from "react-router-dom";
 import {serverStatusToPersion, serverStatusColor} from '../servers/ServerTable'
+import ResourceView from './ResourceView';
 
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-import { Typography } from "@mui/material";
-import IconButton from '@mui/material/IconButton';
-import UndoIcon from '@mui/icons-material/Undo';
+import {Typography} from "@mui/material";
 
 function useQuery() {
     const { search } = useLocation();
@@ -52,7 +51,9 @@ const ServerView = (props) => {
                 <TabPanel value="1" sx={{height: '100%', backgroundColor: 'defaultBack.light'}}>
                     <Overview server={server} status={serverStatusToPersion(status)} color = {serverStatusColor(status)}/>
                 </TabPanel>
-                <TabPanel value="2">Item Two</TabPanel>
+                <TabPanel value="2" sx={{height: '100%', backgroundColor: 'defaultBack.light'}}>
+                    <ResourceView/>
+                </TabPanel>
                 <TabPanel value="3">Item Three</TabPanel>
             </TabContext>
         </Box>
