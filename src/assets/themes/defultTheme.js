@@ -147,6 +147,30 @@ const defaultTheme = createTheme({
                 }
             }
         },
+        MuiOutlinedInput:{
+            styleOverrides:{
+                root:{
+                    border: '0px solid',
+                    borderRadius: '16px',
+                    paddingTop: '4px !important',
+                    paddingBottom: '4px !important',
+                    '&::before':{
+                        borderBottom: 'none',
+                    },
+                    '&::after':{
+                        borderBottom: 'none',
+                    },
+                    '&:hover:not(.Mui-disabled)':{
+                        '&::before':{
+                            borderBottom: 'none',
+                        },
+                    }
+                },
+                input:{
+                    padding:'4px 8px'
+                }
+            }
+        },
         MuiFormControl:{
             styleOverrides:{
                 root:{

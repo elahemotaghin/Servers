@@ -1,12 +1,13 @@
 import React from "react";
 import {Route, Routes} from "react-router-dom";
-import Home from "./dashboard/Home"
-import ServerView from "./serverView/ServerView";
-import ServersRoot from './servers/index';
-import defaultTheme from "../assets/themes/defultTheme";
+
+import defaultTheme from "../../assets/themes/defultTheme";
 import Header from "./Header";
 import SideBar from "./Sidebar";
-import '../assets/themes/customStyle.css'
+import Home from "../dashboard/Home"
+import ServerView from "../serverView/ServerView";
+import ServersRoot from '../servers/index';
+import '../../assets/themes/customStyle.css'
 
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';

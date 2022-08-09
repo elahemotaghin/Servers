@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 
 import AdbIcon from '@mui/icons-material/Adb';
 import Drawer from '@mui/material/Drawer';
@@ -15,25 +15,28 @@ import PolicyIcon from '@mui/icons-material/Policy';
 import WbCloudyIcon from '@mui/icons-material/WbCloudy';
 import DisplaySettingsIcon from '@mui/icons-material/DisplaySettings';
 
-const menu = [
-                {name: 'داشبورد',
-                 icon: <HomeIcon fontSize="small" color="gray"/>,
-                 href: '/'
-                },
-                {name: 'سرورهای اختصاصی',
-                 icon: <DisplaySettingsIcon fontSize="small" color="primary"/>,
-                color: 'primary.main',
-                border: '3px solid',
-                href: '/servers'},
-                {name: 'ماشین های ابری', 
-                icon: <WbCloudyIcon fontSize="small" color="gray"/>,
-                href: '#'},
-                {name: 'قوانین', 
-                icon: <PolicyIcon fontSize="small" color="gray"/>,
-                href: '#'}]
-
 const SideBar = (props) =>{
     const drawerWidth = props.drawerWidth;
+    let location = useLocation();
+
+    const menu = [
+        {name: 'داشبورد',
+         icon: <HomeIcon fontSize="small" className={location.pathname == '/' ? 'active-link-icon' : 'link-icon'}/>,
+         href: '/'
+        },
+        {name: 'سرورهای اختصاصی',
+         icon: <DisplaySettingsIcon fontSize="small" className={location.pathname == '/servers' ? 'active-link-icon' : 'link-icon'}/>,
+        color: 'primary.main',
+        border: '3px solid',
+        href: '/servers'},
+        {name: 'ماشین های ابری', 
+        icon: <WbCloudyIcon fontSize="small" className="link-icon"/>,
+        href: '#'},
+        {name: 'قوانین', 
+        icon: <PolicyIcon fontSize="small" className="link-icon"/>,
+        href: '#'}
+    ]
+
     return(
         <Drawer
             sx={{
@@ -65,12 +68,16 @@ const SideBar = (props) =>{
                 </Typography>
             </Box>
             <Toolbar variant="dense"/>
-            <List>
+            <List >
             {menu.map((item) => (
-                <ListItem key={item.name} sx={{borderRight: item?.border, borderColor: item?.color}}>
-                    <ListItemButton component={Link} to={item.href}>
+                <ListItem key={item.name}
+                className={location.pathname==item.href? 'active-list-item': ''}
+                >
+                    <ListItemButton component={Link} to={item.href} selected={item.href === window.location.pathname}
+                     sx={{backgroundColor:'#fff !important'}}>
                         {item.icon}
-                        <ListItemText primary={item.name} sx={{display: 'flex', marginRight: 2, color: item?.color}}/>
+                        <ListItemText primary={item.name} sx={{display: 'flex', marginRight: 2}}
+                         className={location.pathname==item.href? 'active-link-text': ''}/>
                     </ListItemButton>
                 </ListItem>
             ))}

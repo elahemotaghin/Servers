@@ -1,7 +1,6 @@
-import Root from "./Components/Root";
+import Root from "./Components/sharedComponents/Root";
 import React from "react";
 import {BrowserRouter} from "react-router-dom";
-// import './assets/sass/reset.css';
 
 class App extends React.Component{
   render(){

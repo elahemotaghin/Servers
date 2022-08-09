@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom";
 
+import RouterBreadcrumbs from './RouterBreadcrumbs'
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -15,10 +17,6 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 
-const pages = [
-    {name: 'خانه' , href: '/', key: 'home'},
-    {name: 'سرورها' , href: '/servers', key: 'servers'}
-]
 const settings = ['پروفایل', 'حساب کاربری', 'داشبورد', 'خروج'];
 
 const Header = (props) =>{
@@ -39,54 +37,9 @@ const Header = (props) =>{
         sx={{ width: `calc(100% - ${drawerWidth}px)`, mr: `${drawerWidth}px` }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                    <IconButton
-                        size="large"
-                        aria-label="account of current user"
-                        aria-controls="menu-appbar"
-                        aria-haspopup="true"
-                        onClick={(event) => setAnchorElNav(event.currentTarget)}
-                        color="primary"
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Menu
-                    id="menu-appbar"
-                    anchorEl={anchorElNav}
-                    anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'left',
-                    }}
-                    keepMounted
-                    transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'left',
-                    }}
-                    open={Boolean(anchorElNav)}
-                    onClose={handleCloseNavMenu}
-                    sx={{
-                        display: { xs: 'block', md: 'none' },
-                    }}
-                    >
-                        {pages.map((page, index) => (
-                            <MenuItem key={index} onClick={handleCloseNavMenu} component={Link} to={page.href}>
-                                <Typography textAlign="center">{page.name}</Typography>
-                            </MenuItem>
-                        ))}
-                    </Menu>
-                </Box>
-                <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                    {pages.map((page, index) => (
-                    <Button
-                        key={index}
-                        onClick={handleCloseNavMenu}
-                        sx={{ my: 2, color: '#3a3a3a' }}
-                        component={Link} to={page.href}
-                        
-                    >
-                        {page.name}
-                    </Button>
-                    ))}
+                
+                <Box sx={{ flexGrow: 1, display: 'flex' }}>
+                    <RouterBreadcrumbs/>
                 </Box>
 
                 <Box sx={{ flexGrow: 0 }}>

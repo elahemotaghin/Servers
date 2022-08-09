@@ -1,4 +1,5 @@
 import React from "react";
+import './assets/style/style.css'
 import ServerTable from "./ServerTable";
 import AddDialog from "./AddDialog";
 import {serverStatusToPersion} from "./ServerTable"

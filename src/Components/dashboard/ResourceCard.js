@@ -11,7 +11,6 @@ import LockIcon from '@mui/icons-material/Lock';
 
 const ResourceCard = (props) =>{
     const {content} = props;
-    console.log(content)
     return(
         <Card sx={{backgroundColor: content.color, color: content?.color ? '#fff' : ''}}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between'}}>

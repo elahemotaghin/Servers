@@ -14,10 +14,10 @@ const AddDialog = (props) =>{
     const {handleClose} = props
     return(
         <Dialog open={true} onClose={handleClose}>
-        <DialogTitle>ويرايش سرور</DialogTitle>
+        <DialogTitle>ایجاد سرور</DialogTitle>
         <DialogContent>
             <DialogContentText>
-                اطلاعات مورد نظر خود را ويرايش كنيد.
+                سرور مورد نظر خود را ایجاد كنيد.
             </DialogContentText>
             <Box component="form" sx={{'& > :not(style)': { m: 1 }, width:'500px'}}>
                 <Box sx={{display:'flex', justifyContent: 'space-around'}}>

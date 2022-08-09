@@ -1,6 +1,7 @@
 import React from "react";
 import Overview from "./overview";
 import {useLocation, useParams} from "react-router-dom";
+import './assets/style/style.css'
 import {serverStatusToPersion, serverStatusColor} from '../servers/ServerTable'
 import ResourceView from './ResourceView';
 import AccessibilityView from './AccessibilityView'
@@ -36,7 +37,7 @@ const ServerView = (props) => {
         <Box sx={{ width: '100%', typography: 'body1', height: '100%'}}>
             <Box sx={{backgroundColor: 'defaultBack.light', padding: 3, display: 'flex', alignItems: 'center'}}>
                 <Typography variant='h1' color={'primary'}>{server.name}</Typography>
-                <Box sx={{display: 'flex', alignItems: 'center', marginRight:2}}>
+                <Box sx={{display: 'flex', alignItems: 'center', marginRight:2, backgroundColor:'#fff', padding:'4px', borderRadius: '16px'}}>
                     <Box className="statusIcon" component={'span'} color={serverStatusColor(status)}></Box>
                     <Typography variant='body2' color={serverStatusColor(status)}>{serverStatusToPersion(status)}</Typography>
                 </Box>

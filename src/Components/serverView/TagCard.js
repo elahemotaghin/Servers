@@ -1,5 +1,6 @@
 import React from "react";
 
+import CreateNewTag from "./CreateNewTag";
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -9,10 +10,23 @@ import { Button } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 
 const TagCard = (props) => {
-    const {content} = props;
+    const {server} = props;
+    const [tags, setTags] = React.useState(server.tags);
+    const [newTag, setNewTag] = React.useState('');
 
     const addTag = () =>{
+        if(!server.tags.includes(newTag)){
+            let newTags = server.tags.push(newTag);
+            setTags(newTags);
+        }
 
+    }
+
+    const onChipDelete = (chipLabel) =>{
+        server.tags = server.tags.filter((chip)=>{
+            return chip != chipLabel;
+        });
+        setTags(server.tags);
     }
 
     return(
@@ -22,17 +36,19 @@ const TagCard = (props) => {
             </Box>
             <CardContent>
                 <Box>
-                    {props.server.tags.map((tag, index)=>{
+                    {server.tags.map((tag, index)=>{
                         return(<Chip
                             key={index}
                             label={tag}
                             size="small"
                             color="primary"
+                            onDelete={()=>onChipDelete(tag)}
                             />)
                     })}
                 </Box>
                 <Box sx={{display: 'flex', justifyContent:'flex-end'}}>
-                    <Button onClick={addTag} variant="contained" size="small" id="addBtn" color='secondary' disableElevation>
+                    <CreateNewTag setNewTag={setNewTag}/>
+                    <Button onClick={addTag} variant="contained" size="small" id="addBtn" color='secondary'>
                         <AddIcon/>
                             افزودن
                     </Button>
